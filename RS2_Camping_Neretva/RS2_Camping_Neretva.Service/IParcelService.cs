@@ -9,6 +9,10 @@ namespace RS2_Camping_Neretva.Service
 {
     public interface IParcelService
     {
-        List<ParcelModel> GetList();
+        Task<List<ParcelModel>> GetAllAsync();
+        Task<ParcelModel> GetByIdAsync(int id);
+        Task<ParcelModel> CreateAsync(ParcelModel parcel);
+        Task<ParcelModel> UpdateAsync(int id, ParcelModel parcel);
+        Task DeleteAsync(int id);
     }
 }

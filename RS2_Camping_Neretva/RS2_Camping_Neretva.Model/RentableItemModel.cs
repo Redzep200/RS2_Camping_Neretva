@@ -4,13 +4,13 @@ using System.Text;
 
 namespace RS2_Camping_Neretva.Model
 {
-    public class ParcelModel
+    public class RentableItemModel
     {
-        public int ParcelId { get; set; }
-        public string ParcelNumber { get; set; }
-        public bool Shade { get; set; }
-        public bool Electricity { get; set; }
+        public int ItemId { get; set; }
+        public int TotalQuantity { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
+        public decimal PricePerDay { get; set; }
         public string AvailabilityStatus { get; set; }
     }
 }
