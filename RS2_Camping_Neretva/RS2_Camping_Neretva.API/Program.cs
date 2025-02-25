@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RS2_Camping_Neretva.Service;
 using RS2_Camping_Neretva.Service.Database;
+using Mapster;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("CampingNeretvaConnection");
 builder.Services.AddDbContext<CampingNeretvaRs2Context>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddMapster();
 
 var app = builder.Build();
 
