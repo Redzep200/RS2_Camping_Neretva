@@ -15,10 +15,5 @@ namespace RS2_Camping_Neretva.API.Controllers
             _service = service;
         }
 
-        [HttpGet]
-       public List<ParcelModel> getList()
-        {
-            return _service.GetList();
-        }
     }
 }
