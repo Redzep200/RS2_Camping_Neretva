@@ -9,10 +9,6 @@ namespace RS2_Camping_Neretva.Service
 {
     public interface IRentableItemService
     {
-        Task<List<RentableItemModel>> GetAllAsync();
-        Task<RentableItemModel> GetByIdAsync(int id);
-        Task<RentableItemModel> CreateAsync(RentableItemModel rentableItem);
-        Task<RentableItemModel> UpdateAsync(int id, RentableItemModel rentableItem);
-        Task DeleteAsync(int id);
+        List<RentableItemModel> GetList();
     }
 }

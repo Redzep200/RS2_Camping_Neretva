@@ -9,10 +9,6 @@ namespace RS2_Camping_Neretva.Service
 {
     public interface IVehicleService
     {
-        Task<List<VehicleModel>> GetAllAsync();
-        Task<VehicleModel> GetByIdAsync(int id);
-        Task<VehicleModel> CreateAsync(VehicleModel vehicle);
-        Task<VehicleModel> UpdateAsync(int id, VehicleModel vehicle);
-        Task DeleteAsync(int id);
+        List<VehicleModel> GetList();
     }
 }

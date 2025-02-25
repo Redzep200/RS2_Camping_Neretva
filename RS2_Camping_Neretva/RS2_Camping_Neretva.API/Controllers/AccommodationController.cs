@@ -6,20 +6,18 @@ namespace RS2_Camping_Neretva.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ParcelController : ControllerBase
+    public class AccommodationController : ControllerBase
     {
-        protected IParcelService _service;
+        protected IAccommodationService _service;
 
-        public ParcelController(IParcelService service)
+        public AccommodationController(IAccommodationService service)
         {
             _service = service;
         }
-
         [HttpGet]
-        public List<ParcelModel> GetList()
+        public List<AccommodationModel> GetList()
         {
             return _service.GetList();
         }
-
     }
 }

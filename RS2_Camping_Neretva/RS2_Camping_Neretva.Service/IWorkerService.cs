@@ -9,10 +9,6 @@ namespace RS2_Camping_Neretva.Service
 {
     internal interface IWorkerService
     {
-        Task<List<WorkerModel>> GetAllAsync();
-        Task<WorkerModel> GetByIdAsync(int id);
-        Task<WorkerModel> CreateAsync(WorkerModel worker);
-        Task<WorkerModel> UpdateAsync(int id, WorkerModel worker);
-        Task DeleteAsync(int id);
+        List<WorkerModel> GetList();
     }
 }

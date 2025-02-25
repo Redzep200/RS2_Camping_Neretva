@@ -9,10 +9,6 @@ namespace RS2_Camping_Neretva.Service
 {
     public interface IActivityService
     {
-        Task<List<ActivityModel>> GetAllAsync();
-        Task<ActivityModel> GetByIdAsync(int id);
-        Task<ActivityModel> CreateAsync(ActivityModel activity);
-        Task<ActivityModel> UpdateAsync(int id, ActivityModel activity);
-        Task DeleteAsync(int id);
+        List<ActivityModel> GetList();
     }
 }

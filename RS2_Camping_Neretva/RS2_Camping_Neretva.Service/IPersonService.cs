@@ -9,10 +9,6 @@ namespace RS2_Camping_Neretva.Service
 {
     public interface IPersonService
     {
-        Task<List<PersonModel>> GetAllAsync();
-        Task<PersonModel> GetByIdAsync(int id);
-        Task<PersonModel> CreateAsync(PersonModel person);
-        Task<PersonModel> UpdateAsync(int id, PersonModel person);
-        Task DeleteAsync(int id);
+        List<PersonModel> GetList();
     }
 }
