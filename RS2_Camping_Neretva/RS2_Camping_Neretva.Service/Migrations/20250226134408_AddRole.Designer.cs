@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RS2_Camping_Neretva.Service.Database;
 
@@ -11,9 +12,11 @@ using RS2_Camping_Neretva.Service.Database;
 namespace RS2_Camping_Neretva.Service.Migrations
 {
     [DbContext(typeof(CampingNeretvaRs2Context))]
-    partial class CampingNeretvaRs2ContextModelSnapshot : ModelSnapshot
+    [Migration("20250226134408_AddRole")]
+    partial class AddRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

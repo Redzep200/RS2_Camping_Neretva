@@ -11,11 +11,11 @@ public partial class Worker
 
     public string? LastName { get; set; }
 
-    public string? Role { get; set; }
-
     public string? PhoneNumber { get; set; }
 
     public string? Email { get; set; }
+
+    public virtual ICollection<Role> Roles { get; set; } = new List<Role>();
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 

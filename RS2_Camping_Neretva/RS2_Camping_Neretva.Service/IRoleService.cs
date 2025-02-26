@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace RS2_Camping_Neretva.Service
 {
-    public interface IWorkerService
+    public interface IRoleService
     {
-        List<WorkerModel> GetList();
+        List<RoleModel> GetList();
     }
 }

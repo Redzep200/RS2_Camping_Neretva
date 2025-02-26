@@ -47,6 +47,8 @@ public partial class CampingNeretvaRs2Context : DbContext
 
     public virtual DbSet<Worker> Workers { get; set; }
 
+    public virtual DbSet<Role> Roles { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=DESKTOP-1MUH4I3;Database=CampingNeretva_RS2;Trusted_Connection=True;TrustServerCertificate=True");
@@ -254,6 +256,31 @@ public partial class CampingNeretvaRs2Context : DbContext
         {
             entity.HasKey(e => e.WorkerId).HasName("PK__Workers__077C8826ADEFBF7D");
         });
+
+        modelBuilder.Entity<Role>(entity =>
+        {
+            entity.HasKey(e => e.RoleId).HasName("PK__Roles__8AFACE1A7F60ED59");
+            entity.Property(e => e.RoleName).IsRequired();
+        });
+
+        modelBuilder.Entity<Worker>()
+        .HasMany(w => w.Roles)
+        .WithMany(r => r.Workers)
+        .UsingEntity<Dictionary<string, object>>(
+            "WorkerRole",
+            r => r.HasOne<Role>().WithMany()
+                .HasForeignKey("RoleId")
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__WorkerRol__RoleI__76543210"),
+            l => l.HasOne<Worker>().WithMany()
+                .HasForeignKey("WorkerId")
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__WorkerRol__Worke__01234567"),
+            j =>
+            {
+                j.HasKey("WorkerId", "RoleId").HasName("PK__WorkerRo__E1A8630F89ABCDEF");
+                j.ToTable("WorkerRoles");
+            });
 
         OnModelCreatingPartial(modelBuilder);
     }

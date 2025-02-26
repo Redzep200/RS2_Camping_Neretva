@@ -13,6 +13,8 @@ builder.Services.AddTransient<IPersonService, PersonService>();
 builder.Services.AddTransient<IRentableItemService, RentableItemService>();
 builder.Services.AddTransient<IReviewService, ReviewService>();
 builder.Services.AddTransient<IVehicleService, VehicleService>();
+builder.Services.AddTransient<IRoleService, RoleService>();
+builder.Services.AddTransient<IWorkerService, WorkerService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
